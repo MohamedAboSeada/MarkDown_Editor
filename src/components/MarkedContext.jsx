@@ -13,7 +13,7 @@ class MarkedCont extends Component {
 
 	changeMarkdown = (e) => {
 		this.setState({
-			markdown: e.target.value,
+			markdown: e,
 		});
 	};
 

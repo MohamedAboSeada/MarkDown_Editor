@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, createContext } from 'react';
 import './navStyle.css';
 import { ThemeContext } from './ThemeContext';
 import { Moon, Sun } from 'react-feather';
 
 class Nav extends Component {
 	static contextType = ThemeContext;
+
 	render() {
 		let { theme, onchangeTheme } = this.context;
 		return (
@@ -17,5 +18,4 @@ class Nav extends Component {
 		);
 	}
 }
-
 export default Nav;
