@@ -4,8 +4,8 @@ import { ThemeContext } from './ThemeContext';
 import { Marked } from 'marked';
 import { markedHighlight } from 'marked-highlight';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/default.css'; // Import the CSS style
-
+import 'highlight.js/styles/atom-one-dark.css'; // Import the CSS style
+import { MathJax } from 'better-react-mathjax';
 const marked = new Marked(
 	markedHighlight({
 		langPrefix: 'hljs language-',
@@ -36,10 +36,12 @@ class MarkdownPrev extends Component {
 		return (
 			<ThemeContext.Consumer>
 				{(Theme) => (
-					<div
-						className={`MardownPrev ${Theme.theme}`}
-						ref={this.prevRef}
-					></div>
+					<MathJax className='MardownPrev'>
+						<div
+							className={`MardownPrevSpace ${Theme.theme}`}
+							ref={this.prevRef}
+						></div>
+					</MathJax>
 				)}
 			</ThemeContext.Consumer>
 		);

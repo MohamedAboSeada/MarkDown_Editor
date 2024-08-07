@@ -5,6 +5,7 @@ import MarkdownEditor from './components/Editor';
 import MarkdownPrev from './components/MarkdownPrev';
 import Nav from './components/nav';
 import './App.css';
+import { MathJaxContext } from 'better-react-mathjax';
 
 class App extends Component {
 	render() {
@@ -15,7 +16,9 @@ class App extends Component {
 					<div className='editor'>
 						<MarkedCont>
 							<MarkdownEditor />
-							<MarkdownPrev />
+							<MathJaxContext>
+								<MarkdownPrev />
+							</MathJaxContext>
 						</MarkedCont>
 					</div>
 				</ThemeCont>
